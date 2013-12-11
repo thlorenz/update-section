@@ -1,5 +1,7 @@
 # update-section [![build status](https://secure.travis-ci.org/thlorenz/update-section.png)](http://travis-ci.org/thlorenz/update-section)
 
+[![testling badge](https://ci.testling.com/thlorenz/update-section.png)](https://ci.testling.com/thlorenz/update-section)
+
 Updates a section inside a file with newer content while removing the old content.
 
 ```js
