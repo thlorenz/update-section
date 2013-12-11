@@ -1,36 +1,54 @@
 {
-    "name" : "update-section",
-    "version" : "0.0.0",
-    "description" : "Updates a section inside a file with newer content while removing the old content.",
-    "main" : "index.js",
-    "scripts" : {
-      "test-main" :  "tap test/*.js",
-      "test-0.8"  :  "nave use 0.8 npm run test-main",
-      "test-0.10" :  "nave use 0.10 npm run test-main",
-      "test-all": "npm run test-main && npm run test-0.8 && npm run test-0.10",
-      "test"      :  "if [ -e $TRAVIS ]; then npm run test-all; else npm run test-main; fi"
+    "name": "update-section",
+    "version": "0.0.0",
+    "description": "Updates a section inside a file with newer content while removing the old content.",
+    "main": "update-section.js",
+    "scripts": {
+        "test": "set -e; for t in test/*.js; do node $t; done"
     },
-    "repository" : {
-      "type" : "git",
-      "url" : "git://github.com/thlorenz/update-section.git"
+    "repository": {
+        "type": "git",
+        "url": "git://github.com/thlorenz/update-section.git"
     },
-    "homepage" : "https://github.com/thlorenz/update-section",
-    "dependencies" : {
+    "homepage": "https://github.com/thlorenz/update-section",
+    "dependencies": {},
+    "devDependencies": {
+        "tape": "~1.0.4"
     },
-    "devDependencies" : {
-      "nave": "~0.4.3",
-      "tape": "~1.0.4",
-      "tap": "~0.4.3"
+    "keywords": [
+        "update",
+        "replace",
+        "section",
+        "regex",
+        "readme",
+        "text"
+    ],
+    "author": {
+        "name": "Thorsten Lorenz",
+        "email": "thlorenz@gmx.de",
+        "url": "http://thlorenz.com"
     },
-    "keywords": [] ,
-    "author" : {
-      "name" : "Thorsten Lorenz",
-      "email" : "thlorenz@gmx.de",
-      "url" : "http://thlorenz.com"
+    "license": {
+        "type": "MIT",
+        "url": "https://github.com/thlorenz/update-section/blob/master/LICENSE"
     },
-    "license" : {
-      "type": "MIT",
-      "url": "https://github.com/thlorenz/update-section/blob/master/LICENSE"
+    "engine": {
+        "node": ">=0.6"
     },
-    "engine" : { "node" : ">=0.6" }
+    "testling": {
+        "files": "test/*.js",
+        "browsers": [
+            "ie/8..latest",
+            "firefox/17..latest",
+            "firefox/nightly",
+            "chrome/22..latest",
+            "chrome/canary",
+            "opera/12..latest",
+            "opera/next",
+            "safari/5.1..latest",
+            "ipad/6.0..latest",
+            "iphone/6.0..latest",
+            "android-browser/4.2..latest"
+        ]
+    }
 }
