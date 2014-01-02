@@ -1,6 +1,6 @@
 {
   "name": "update-section",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "Updates a section inside a file with newer content while removing the old content.",
   "main": "update-section.js",
   "scripts": {
