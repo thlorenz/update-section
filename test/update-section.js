@@ -183,6 +183,7 @@ test('\nno start or end force top', function (t) {
     'and we added another line',
     'here',
     'END -- GENERATED GOODNESS',
+    '',
     '# Some Project',
     '',
     'Does a bunch of things',
