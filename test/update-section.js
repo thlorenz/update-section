@@ -166,6 +166,38 @@ test('\nno start or end', function (t) {
   t.end()
 })
 
+test('\nno start or end force top', function (t) {
+  var original = [
+      '# Some Project'
+    , ''
+    , 'Does a bunch of things'
+    , ''
+    , '#The End'
+    , ''
+    , 'Til next time'
+  ].join('\n');
+
+  var expected = [ 
+    'START -- GENERATED GOODNESS',
+    'this was painstakingly re-generated',
+    'and we added another line',
+    'here',
+    'END -- GENERATED GOODNESS',
+    '',
+    '# Some Project',
+    '',
+    'Does a bunch of things',
+    '',
+    '#The End',
+    '',
+    'Til next time']
+
+  var updated = updateSection(original, update, matchesStart, matchesEnd, true);
+
+  t.deepEqual(expected, updated.split('\n'))
+  t.end()
+})
+
 test('\nempty string', function (t) {
   var original = '';
   var updated = updateSection(original, update, matchesStart, matchesEnd);

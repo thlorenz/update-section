@@ -102,7 +102,7 @@ MIT
 </div>
 <dl>
 <dt>
-<h4 class="name" id="updateSection"><span class="type-signature"></span>updateSection<span class="signature">(content, section, matchesStart, matchesEnd)</span><span class="type-signature"> &rarr; {String}</span></h4>
+<h4 class="name" id="updateSection"><span class="type-signature"></span>updateSection<span class="signature">(content, section, matchesStart, matchesEnd, top)</span><span class="type-signature"> &rarr; {String}</span></h4>
 </dt>
 <dd>
 <div class="description">
@@ -147,6 +147,13 @@ Otherwise the section is appended to the end of the content.</p>
 <span class="param-type">function</span>
 </td>
 <td class="description last"><p>when called with a line needs to return true iff it is the section end line</p></td>
+</tr>
+<tr>
+<td class="name"><code>top</code></td>
+<td class="type">
+<span class="param-type">boolean</span>
+</td>
+<td class="description last"><p>forces the section to be added at the top of the content if a replacement couldn't be made</p></td>
 </tr>
 </tbody>
 </table>

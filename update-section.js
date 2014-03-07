@@ -53,9 +53,10 @@ function parse(lines, matchesStart, matchesEnd) {
  * @param {String} section the section to update
  * @param {Function} matchesStart when called with a line needs to return true iff it is the section start line
  * @param {Function} matchesEnd when called with a line needs to return true iff it is the section end line
+ * @param {boolean} top forces the section to be added at the top of the content if a replacement couldn't be made
  * @return {String} content with updated section
  */
-exports = module.exports = function updateSection(content, section, matchesStart, matchesEnd) {
+exports = module.exports = function updateSection(content, section, matchesStart, matchesEnd, top) {
   if (!content) return section;
 
   var lines = content.split('\n')
@@ -64,7 +65,7 @@ exports = module.exports = function updateSection(content, section, matchesStart
   var info = parse(lines, matchesStart, matchesEnd);
 
   // no previous section found in content not just append
-  if (!info.hasStart) return content + '\n\n' + section;
+  if (!info.hasStart) return top ? section + '\n\n' + content : content + '\n\n' + section;
 
   var sectionLines = section.split('\n')
     , dropN = info.endIdx - info.startIdx + 1;
