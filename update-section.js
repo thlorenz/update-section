@@ -65,7 +65,7 @@ exports = module.exports = function updateSection(content, section, matchesStart
   var info = parse(lines, matchesStart, matchesEnd);
 
   // no previous section found in content not just append
-  if (!info.hasStart) return top ? section + '\n' + content : content + '\n\n' + section;
+  if (!info.hasStart) return top ? section + '\n\n' + content : content + '\n\n' + section;
 
   var sectionLines = section.split('\n')
     , dropN = info.endIdx - info.startIdx + 1;
